@@ -7,22 +7,33 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <h2>ROGER'S S高候補銘柄リスト</h2>
-    <table border="1">
-        <tr>
-            <th>銘柄コード</th>
-            <th>銘柄名</th>
-            <th>上場区分</th>
-            <th>サプライズ内容</th>
-        </tr>
-        {% for row in data %}
-        <tr>
-            <td>{{ row['銘柄コード'] }}</td>
-            <td>{{ row['銘柄名'] }}</td>
-            <td>{{ row['上場区分'] }}</td>
-            <td>{{ row['サプライズ内容'] }}</td>
-        </tr>
-        {% endfor %}
-    </table>
+    <header>
+        <h1>ROGER'S S高候補銘柄リスト</h1>
+    </header>
+
+    <main>
+        <table>
+            <tr>
+                <th>銘柄コード</th>
+                <th>銘柄名</th>
+                <th>上場区分</th>
+                <th>サプライズ内容</th>
+            </tr>
+            {% for row in data %}
+            <tr>
+                <td>{{ row['銘柄コード'] }}</td>
+                <td>{{ row['銘柄名'] }}</td>
+                <td>{{ row['上場区分'] }}</td>
+                <td>{{ row['サプライズ内容'] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+
+        <button class="logout-btn" onclick="location.href='/logout'">ログアウト</button>
+    </main>
+
+    <footer>
+        <p>© 2025 Roger's S 高候補銘柄リスト</p>
+    </footer>
 </body>
 </html>
