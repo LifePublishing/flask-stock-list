@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROGER'S S高候補銘柄リスト</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h2>ROGER'S S高候補銘柄リスト</h2>
+    <table border="1">
+        <tr>
+            <th>銘柄コード</th>
+            <th>銘柄名</th>
+            <th>上場区分</th>
+            <th>サプライズ内容</th>
+        </tr>
+        {% for row in data %}
+        <tr>
+            <td>{{ row['銘柄コード'] }}</td>
+            <td>{{ row['銘柄名'] }}</td>
+            <td>{{ row['上場区分'] }}</td>
+            <td>{{ row['サプライズ内容'] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
